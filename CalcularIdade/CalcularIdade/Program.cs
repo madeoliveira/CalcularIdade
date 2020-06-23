@@ -11,13 +11,14 @@ namespace CalcularIdade
         static void Main(string[] args)
         {
             Console.WriteLine("Programa que calcula Idade");
-            Pessoa pessoa = new Pessoa();
             Console.Write("Nome da pessoa: ");
-            pessoa.Nome = Console.ReadLine();
+             String nome = Console.ReadLine();
             Console.Write("Ano de nascimento: ");
-            pessoa.AnoNascimento =Convert.ToInt32( Console.ReadLine());
+            int ano = Convert.ToInt32(Console.ReadLine());
+            Pessoa pessoa;
+            pessoa = new Pessoa(nome, ano);
             pessoa.ExibirDados();
-            
+
             Console.ReadKey();
         }
     }
