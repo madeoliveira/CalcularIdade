@@ -17,6 +17,7 @@ namespace CalcularIdade
             Console.Write("Ano de nascimento: ");
             pessoa.AnoNascimento =Convert.ToInt32( Console.ReadLine());
             pessoa.ExibirDados();
+            
             Console.ReadKey();
         }
     }

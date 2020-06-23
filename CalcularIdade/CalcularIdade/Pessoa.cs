@@ -15,6 +15,7 @@ namespace CalcularIdade
             get { return this.anoNascimento; }
             set { this.anoNascimento = value; }
         }
+
         private String nome;
 
         public String Nome
@@ -23,19 +24,28 @@ namespace CalcularIdade
             set { this.nome = value.ToUpper(); }
         }
 
+        private int idade;
+
+        public int Idade
+        {
+            get {
+                this.CalcularIdade();
+                return this.idade; }
+        }
+
         public void ExibirDados()
         {
             Console.WriteLine("Nome: " + this.Nome);
             Console.WriteLine("Ano de nascimento: "+ this.AnoNascimento);
-            int idade = this.CalcularIdade();
-            Console.WriteLine("Idade: " +idade);
+            this.CalcularIdade();
+            Console.WriteLine("Idade: " +this.Idade);
         }
-        private int CalcularIdade()
+        private void  CalcularIdade()
         {
             DateTime data = DateTime.Now;
             int ano = data.Year;
-            int idade = ano - this.AnoNascimento;
-            return idade;
+            this.idade = ano - this.AnoNascimento;
+            
         }
 
     }
